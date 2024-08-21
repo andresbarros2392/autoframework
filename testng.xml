@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Testing Suite">
+	<test name="API Testing">
+        <classes>
+            <class name="com.example.autoframework.APITest" />
+        </classes>
+    </test>
+	<test name="Chrome tests">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="com.example.autoframework.LoginTest" />
+            <class name="com.example.autoframework.ProductsTest" />
+        </classes>
+    </test>
+
+<test name="Firefox tests">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="com.example.autoframework.LoginTest" />
+            <class name="com.example.autoframework.ProductsTest" />
+        </classes>
+    </test>
+</suite>
