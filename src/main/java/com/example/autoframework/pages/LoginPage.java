@@ -25,18 +25,22 @@ public class LoginPage extends BasePage{
         PageFactory.initElements(driver, this);
     }
 
+    //Method to enter Username
     public void typeUsername(String username){
         this.enterText(usernameInput, username);
     }
 
+    //Method to enter Password
     public void typePassword(String password){
         this.enterText(passwordInput, password);
     }
 
+    //Method to click on Login button
     public void clickLoginButton(){
         this.click(loginButton);
     }
 
+    //Method to perform login
     public void loginToApp(String username, String password){
         typeUsername(username);
         typePassword(password);

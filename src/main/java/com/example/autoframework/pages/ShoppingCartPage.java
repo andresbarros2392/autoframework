@@ -29,6 +29,7 @@ public class ShoppingCartPage extends BasePage{
         PageFactory.initElements(driver, this);
     }
 
+    //Method to validate that Shopping cart page is loaded
     public void waitForShoppingCartPageToLoad(){
         assertTrue(isElementDisplayed(shoppingCartTitle), "Your Cart is NOT displayed");
         assertTrue(isElementDisplayed(shoppingCartContainer), "Shopping Cart container is NOT displayed");
@@ -36,6 +37,7 @@ public class ShoppingCartPage extends BasePage{
         assertTrue(isElementDisplayed(continueShoppingButton), "Continue Shopping button is NOT displayed");
     }
 
+    //Method to validate if a product is displayed in the list
     public boolean isProductListed(String productName){
         WebElement productListed = driver.findElement(By.xpath("//div[@class='cart_item']//div[@class='inventory_item_name' and text()='"+productName+"']"));
         return isElementDisplayed(productListed);
