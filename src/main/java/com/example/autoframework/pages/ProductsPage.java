@@ -2,6 +2,7 @@ package com.example.autoframework.pages;
 
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -37,10 +38,20 @@ public class ProductsPage extends BasePage{
         click(productToBeAdded);
         waitForElementToBeHidden(productToBeAdded);
     }
+    
 
     public boolean isAddToCartButtonDisplayedForProduct(String productName){
         WebElement addToCartForProduct = driver.findElement(By.xpath("//div[@data-test='inventory-item-name' and text()='"+productName+"']/../../..//button[text()='Add to cart']"));
         return isElementDisplayed(addToCartForProduct);
+    }
+    
+    public boolean isAddToCartButtonHiddenForProduct(String productName){
+    	try {
+    		WebElement addToCartForProduct = driver.findElement(By.xpath("//div[@data-test='inventory-item-name' and text()='"+productName+"']/../../..//button[text()='Add to cart']"));
+            return false;
+        	} catch (NoSuchElementException e) {
+                return true;
+            }
     }
 
     public void removeProductFromCart(String productName){
@@ -53,6 +64,15 @@ public class ProductsPage extends BasePage{
     public boolean isRemoveButtonDisplayedForProduct(String productName){
         WebElement removeButtonForProduct = driver.findElement(By.xpath("//div[@data-test='inventory-item-name' and text()='"+productName+"']/../../..//button[text()='Remove']"));
         return isElementDisplayed(removeButtonForProduct);
+    }
+    
+    public boolean isRemoveButtonHiddenForProduct(String productName) throws NoSuchElementException{
+    	try {
+        WebElement removeButtonForProduct = driver.findElement(By.xpath("//div[@data-test='inventory-item-name' and text()='"+productName+"']/../../..//button[text()='Remove']"));
+        return false;
+    	} catch (NoSuchElementException e) {
+            return true;
+        }
     }
 
     public void clickShoppingCart(){

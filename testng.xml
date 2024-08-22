@@ -6,19 +6,35 @@
             <class name="com.example.autoframework.APITest" />
         </classes>
     </test>
-	<test name="Chrome tests">
+	<test name="UI Chrome tests">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="com.example.autoframework.LoginTest" />
+           <class name="com.example.autoframework.LoginTest" />
             <class name="com.example.autoframework.ProductsTest" />
         </classes>
     </test>
 
-<test name="Firefox tests">
+<test name="UI Firefox tests">
         <parameter name="browser" value="firefox"/>
         <classes>
             <class name="com.example.autoframework.LoginTest" />
             <class name="com.example.autoframework.ProductsTest" />
         </classes>
     </test>
+    
+<!--    <test name="UI Safari tests">
+        <parameter name="browser" value="safari"/>
+        <classes>
+            <class name="com.example.autoframework.LoginTest" />
+            <class name="com.example.autoframework.ProductsTest" />
+        </classes>
+    </test>-->
+    
+<!--    <test name="UI edge tests">
+        <parameter name="browser" value="edge"/>
+        <classes>
+            <class name="com.example.autoframework.LoginTest" />
+            <class name="com.example.autoframework.ProductsTest" />
+        </classes>
+    </test>-->
 </suite>

@@ -46,7 +46,7 @@ public class BasePage {
     }
 
     // Method to check if an element is displayed
-    public boolean isElementDisplayed(WebElement element){
+    public boolean isElementDisplayed(WebElement element) throws NoSuchElementException{
         try {
             return element.isDisplayed();
         } catch (NoSuchElementException e) {
